@@ -11,13 +11,14 @@ const Width = styled.div`
   min-height: 100%;
   border: 3px solid yellow;
   width: 100%;
-  background: linear-gradient(
-    to bottom,
-    #6db3f2 0%,
-    #54a3ee 50%,
-    #3690f0 51%,
-    #1e69de 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #464866;
+  // background: linear-gradient(
+  //   to bottom,
+  //   #6db3f2 0%,
+  //   #54a3ee 50%,
+  //   #3690f0 51%,
+  //   #1e69de 100%
+  // ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 `;
 
 class App extends React.Component {

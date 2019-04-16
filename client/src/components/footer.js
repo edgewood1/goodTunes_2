@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 const Foot = styled.div`
-  padding: 1vh;
+  padding: 3vh;
   @media only screen and (max-width: 800px) {
-    padding: 2vh;
+    padding: 5vh;
   }
 `;
 

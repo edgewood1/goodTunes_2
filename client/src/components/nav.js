@@ -10,30 +10,35 @@ const Wrapper = styled.div`
 display: flex
 justify-content: center;
 
+
 `;
 const HeaderWrapper = styled.div`
   margin: 3% 5% 0 5%;
-  border-radius: 4%;
-  border: 1px solid yellow;
+  border-radius: 2.5%;
+  border: 2px ridge #f5d21f;
   width: 85%;
+  background-color: #29648a;
+  color: white;
+  font-family: "Lato", sans-serif;
 `;
 const Header = styled.div`
-  // margin: 2% 5% 0 5%;
   padding: 3%;
+
+  border-radius: 4%;
 `;
 const Body = styled.div`
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
 
   margin: 0 5% 2% 5%;
 `;
 
 const Button = styled.div`
-  border: 1px solid black;
-  padding: 0.5%;
+  padding: 1%;
   border-radius: 10%;
-  background-color: #fcfcfc;
+  background-color: #2e9cca;
+  text-align: center;
 `;
 
 export default class Nav extends Component {
@@ -136,7 +141,7 @@ export default class Nav extends Component {
       <Wrapper>
         <HeaderWrapper>
           <Header>
-            <h1 style={{ fontSize: "250%" }}>Good Tunes</h1>
+            <h1 style={{ fontSize: "275%" }}>Good Tunes</h1>
             <h2> recommended tunes from the internet </h2>
           </Header>
 

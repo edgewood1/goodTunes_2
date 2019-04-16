@@ -19,7 +19,7 @@ export const Col1 = styled.div`
   border-radius: 5%;
   border: 1px solid yellow;
   width: 40%;
-
+  background-color: #29648a;
   @media only screen and (max-width: 400px) {
     margin: 0;
     order: 1;
@@ -34,6 +34,7 @@ export const Col2 = styled.div`
   border-radius: 5%;
   overflow: scroll;
   border: 1px solid yellow;
+  background-color: #29648a;
   @media only screen and (max-width: 400px) {
     order: 2;
     width: 100%;

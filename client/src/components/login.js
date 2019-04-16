@@ -21,6 +21,7 @@ const Row = styled.div`
   justify-content: center;
   margin: 4%;
   padding: 3%;
+  color: white;
 `;
 
 class Login extends React.Component {
@@ -133,24 +134,51 @@ class Login extends React.Component {
             />
           </Row>
           <Row>
-            <button value="Login" onClick={this.handleLogin}>
+            <button
+              value="Login"
+              onClick={this.handleLogin}
+              style={{
+                color: "black",
+                marginRight: "5%",
+                background: "#f5d21f"
+              }}
+            >
               Login
             </button>
-            <button value="Register" onClick={this.handleLogin}>
+            <button
+              value="Register"
+              onClick={this.handleLogin}
+              style={{
+                color: "black",
+                marginLeft: "5%",
+                background: "#f5d21f"
+              }}
+            >
               Register
             </button>
           </Row>
 
           <Row>
             <Router>
-              <ul>
-                <li>
-                  {/* <Link to="/auth/google"> GOOGLE</Link> */}
-                  {/* <a href="/auth/google">Google </a> */}
-                  <button onClick={this.googleLogin}> Google Plus </button>
-                  {/* <PrivateRoute path="/protected" component={Protected} /> */}
-                </li>
-              </ul>
+              {/* <ul> */}
+              {/* <li> */}
+              {/* <Link to="/auth/google"> GOOGLE</Link> */}
+              {/* <a href="/auth/google">Google </a> */}
+              {/* <button
+                    onClick={this.googleLogin}
+                    style={{
+                      color: "black",
+                      marginLeft: "5%",
+                      background: "#f5d21f",
+                      listStyleType: "none"
+                    }}
+                  >
+                    {" "}
+                    Google Plus{" "}
+                  </button> */}
+              {/* <PrivateRoute path="/protected" component={Protected} /> */}
+              {/* </li> */}
+              {/* </ul> */}
             </Router>
           </Row>
         </form>

@@ -1,6 +1,7 @@
 import API from "../utils/API";
 import React from "react";
 import Rating from "react-rating";
+import styles from "./playlist2.css";
 import {
   Container,
   Header,
@@ -198,27 +199,47 @@ class Books extends React.Component {
                   onClick={value => this.boundClick4(value, e)}
                 />
               </RateDiv>
-              <p style={{ padding: "4%" }}>Votes: {e.votes}</p>
+              <p style={{ padding: "4%", color: "white", fontSize: "1.1em" }}>
+                Votes: {e.votes}
+              </p>
             </Names>
             <Buttons>
               <img alt="meaningful" src={e.source} />
               <button
                 onClick={() => this.playTunes(e)}
-                style={{ margin: "3%" }}
+                style={{
+                  margin: "3%",
+                  backgroundColor: "#f5d21f",
+                  width: "75%",
+                  justifyContent: "center",
+                  marginLeft: "15%"
+                }}
               >
                 Play
               </button>
               {this.props.appData.allTunesShow ? (
                 <button
                   onClick={() => this.saveTunes(e)}
-                  style={{ margin: "3%" }}
+                  style={{
+                    margin: "3%",
+                    backgroundColor: "#44db0d",
+                    width: "75%",
+                    justifyContent: "center",
+                    marginLeft: "15%"
+                  }}
                 >
                   Save
                 </button>
               ) : (
                 <button
                   onClick={() => this.deleteTunes(e)}
-                  style={{ margin: "3%" }}
+                  style={{
+                    margin: "3%",
+                    backgroundColor: "#44db0d",
+                    width: "75%",
+                    justifyContent: "center",
+                    marginLeft: "15%"
+                  }}
                 >
                   {" "}
                   Delete{" "}
