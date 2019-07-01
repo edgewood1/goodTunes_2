@@ -40,14 +40,6 @@ export default {
   // search scrape and add new items to db
   addScrape: function(data) {
     return axios.post("/addScrape", data);
-    // .then(function(response) {
-    //   axios.post("/saveAll", response).then(function(response) {
-    //     return response;
-    //   });
-    // })
-    // .catch(function(error) {
-    //   console.log(error);
-    // });
   },
 
   // get tunes from db

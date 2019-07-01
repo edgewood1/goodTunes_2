@@ -34,36 +34,8 @@ app.use(cookieParser());
 
 // cors below
 
-var cors = require("cors");
-
-// var corsOption = {
-//   origin: true,
-//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-//   credentials: true,
-//   exposedHeaders: ["x-auth-token"]
-// };
+var cors = require("cors"); 
 app.use(cors({ origin: "http://localhost" }));
-
-// app.use("*", function(req, res, next) {
-//   //replace localhost:8080 to the ip address:port of your server
-//   res.header("Access-Control-Allow-Origin", "http://localhost:3001");
-//   res.header("Access-Control-Allow-Headers", "X-Requested-With");
-//   res.header("Access-Control-Allow-Headers", "Content-Type");
-//   res.header("Access-Control-Allow-Credentials", true);
-//   next();
-// });
-
-// //enable pre-flight
-// app.options("*", cors());
-
-// app.use((req, res, next) => {
-// app.all("*", function(req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "http://localhost:3001");
-//   res.header("Access-Control-Allow-Methods", "PUT, GET, POST, DELETE, OPTIONS");
-//   res.header("Access-Control-Allow-Headers", "Content-Type");
-//   next();
-// });
-
 // if (process.env.NODE_ENV === "production") {
 app.use(express.static("client/build"));
 // }

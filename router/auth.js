@@ -6,28 +6,10 @@ var passportSetup = require("../config/passport");
 // Register User
 var cors = require("cors");
 
-// var corsOption = {
-//   origin: "http://localhost:3000",
-//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-//   credentials: true,
-//   exposedHeaders: ["x-auth-token"]
-// };
-// router.use(cors(corsOption));
-
-// router.use((req, res, next) => {
-// router.all("*", function(req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "http://localhost:3001");
-//   res.header("Access-Control-Allow-Methods", "PUT, GET, POST, DELETE, OPTIONS");
-//   res.header("Access-Control-Allow-Headers", "Content-Type");
-//   next();
-// });
-
 router.get("/isLogged", (req, res) => {
   if (req.user) {
-    console.log(req.user);
     res.send(req.user);
-    // get playlist
-    // make a call to database based on users preferences.
+    
   } else {
     res.send(false);
     // user not logged in
@@ -108,11 +90,7 @@ router.get(
   function(req, res) {
     // Successful authentication, redirect home.
     console.log("you're logged in");
-    // console.log(res.data);
-    // res.send(res.currentUser);
     return;
-    // res.redirect("/protected");
-    // res.json({ message: "hello" });
   }
 );
 

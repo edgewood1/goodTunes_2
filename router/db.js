@@ -46,30 +46,12 @@ router.post("/saveAll", function(req, res) {
     return res.send({ newTunes: data, message: "done" });
   });
 });
-// resolve(x);
-// x is everything that needs to be saved
-// }).then(function(data2) {
-//   console.log("doc ----- ", data2);
-// var playlist = new Playlist();
-// if (data2.length > 0) {
-// playlist.save(data2, function(err, doc) {
-//   res.send({
-//     message: "Found " + data2.length + "new tracks.",
-//     newTunes: data2
-//   });
-// });
-// } else {
-//   console.log("nothing saved");
-// }
-// });
-// });
-
+ 
 // 1. get all from db when component loads
 
 router.get("/getPlaylist", function(req, res) {
   Playlist.find({}, function(err, docs) {
     if (err) return res.send(500, { error: err });
-    // console.log("returned ", docs);
     return res.send(docs);
   });
 });
@@ -78,24 +60,18 @@ router.get("/getPlaylist", function(req, res) {
 
 // user wants all tracks
 router.get("/savedTunes/:id", function(req, res) {
-  // var id = req.query.data;
   var id = req.params.id;
-  console.log(id);
   Playlist.find({ userId: id }, function(err, doc) {
-    console.log(doc);
     return res.send(doc);
   });
 });
 
 router.put("/removeUser", function(req, res) {
-  console.log(req.body);
   var user = [req.body.userId];
   var song = req.body._id;
-  console.log(user, song);
   Playlist.updateOne({ songId: song }, { $pullAll: { userId: user } }, function(
     response
   ) {
-    console.log(response);
     res.send({ message: "song removed" });
   });
 });
@@ -142,8 +118,6 @@ router.post("/deleteTunes", function(req, res) {
       $pull: { userId: { $in: [removeThis] } }
     },
     function(err, doc) {
-      console.log(err);
-      console.log("done -------", doc);
       return res.send(doc);
     }
   );
@@ -163,7 +137,6 @@ router.post("/saveRatings", function(req, res) {
       }
     },
     function(err, doc) {
-      console.log("done ---", doc);
       return res.send(doc);
     }
   );

@@ -7,7 +7,6 @@ import Player from "./player";
 
 class Container extends React.Component {
   render() {
-    // https://medium.freecodecamp.org/the-basics-of-destructuring-props-in-react-a196696f5477
     const {
       appData: { play, playerID, message, logInShow }
     } = this.props;

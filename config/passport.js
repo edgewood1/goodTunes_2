@@ -9,13 +9,7 @@ var LocalStrategy = require("passport-local").Strategy;
 passport.serializeUser(function(user, done) {
   done(null, user.id);
 });
-
-// passport.deserializeUser(function(user, done) {
-//   User.findById(user).then(user => {
-//     done(null, user._id);
-//   });
-// });
-
+ 
 passport.deserializeUser(function(id, done) {
   User.getUserById(id, function(err, user) {
     done(err, user);
@@ -52,8 +46,6 @@ passport.use(
           })
             .save()
             .then(newUser => {
-              console.log("new User created: " + newUser);
-              //   done(profile);
               done(null, newUser);
             });
         }
