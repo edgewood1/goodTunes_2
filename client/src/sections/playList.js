@@ -1,7 +1,7 @@
 import API from "../utils/API";
 import React from "react";
 import Rating from "react-rating";
-import styles from "./playlist2.css";
+// import styles from "./playlist2.css";
 import {
   Container,
   Header,
@@ -10,10 +10,8 @@ import {
   LargeFont,
   MedFont,
   RateDiv
-} from "./playList_css";
-// import Star_rate from "@material-ui/icons/Star_rate";
-// import { star } from "react-icons/md"; // full
-// import { star_border } from "react-icons/md"; //empty
+} from "../assets_css/playList_css";
+ 
 
 class Books extends React.Component {
   state = {
@@ -144,10 +142,7 @@ class Books extends React.Component {
       : this.getStuff(rating, song);
   };
   getStuff = (rating, song) => {
-    // var songId = song._id;
-    // var songAvg = song.avgRating;
-    // var userId = this.props.appData.id;
-    // var usersRated = song.usersRated;
+ 
     if (song.usersRated.includes(this.props.appData.id)) {
       this.props.changeState({ message: "You've already rated this track" });
     } else {

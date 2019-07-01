@@ -19,6 +19,7 @@ router.get("/isLogged", (req, res) => {
 
 router.post("/register", function(req, res, next) {
   // does passport take username from req.body?
+  console.log(req.body)
   passport.authenticate("register", function(err, user, info) {
     if (err) {
       return next(err);
@@ -30,10 +31,11 @@ router.post("/register", function(req, res, next) {
       if (err) {
         return next(err);
       }
-
+      console.log(info)
+      user.hello = "hello";
       user.message = info;
-
-      return res.send(user);
+      console.log("final message ==> ", user)
+      return res.send({user: user, message: info});
     });
   })(req, res, next);
 });

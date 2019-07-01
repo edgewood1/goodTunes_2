@@ -58,7 +58,7 @@ passport.use(
   "register",
   new LocalStrategy(function(username, password, done) {
     User.findOne({ username: username }).then(currentUser => {
-      if (err) throw err;
+      // if (err) throw err;
       if (currentUser) {
         //already have user
         console.log("user is ", currentUser);
@@ -70,11 +70,14 @@ passport.use(
           username: username,
           password: password
         });
-
+       
         User.createUser(newUser, function(err, user) {
           if (err) throw err;
-
-          return done(null, user, { message: "user created!! " });
+          console.log("errr-----> ", err)
+          message = {message: "user created!!"}
+          user.data.message = {message: "user created!!"}
+          console.log(user)
+          done(null, user, message);
         });
       }
     });

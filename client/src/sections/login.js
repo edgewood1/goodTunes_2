@@ -1,28 +1,12 @@
 import React from "react";
-import styled from "styled-components";
-import API from "../utils/API";
-import Playlist from "./playList";
 import axios from "axios";
 import {
   BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect,
-  withRouter
 } from "react-router-dom";
 
-const Container = styled.div`
-  width: 50vw;
-  order: 2;
-`;
+import API from "../utils/API";
+import {Container, Row, Input} from '../assets_css/login_css'
 
-const Row = styled.div`
-  flex-direction: column;
-  justify-content: center;
-  margin: 4%;
-  padding: 3%;
-  color: white;
-`;
 
 class Login extends React.Component {
   state = {
@@ -52,6 +36,8 @@ class Login extends React.Component {
       password: this.state.password
     };
 
+    console.log(event.target.value)
+
     event.target.value === "Login"
       ? API.login(data).then(res => {
           if (res.data._id) {
@@ -64,9 +50,10 @@ class Login extends React.Component {
           }
         })
       : API.register(data).then(res => {
+        console.log(res)
           this.props.changeState({
-            message: res.data.message,
-            id: res.data._id,
+            message: res.data.message.message,
+            id: res.data.user._id,
             login: true,
             db: false
           });
@@ -104,10 +91,7 @@ class Login extends React.Component {
     });
   };
 
-  // function PrivateRoute({ component: Component, ...rest }) {
-  //   console.log(...rest)
-
-  // }
+ 
 
   render() {
     return (
@@ -115,7 +99,7 @@ class Login extends React.Component {
         <form>
           <Row>
             <label htmlFor="username">Username: </label>
-            <input
+            <Input
               type="text"
               id="username"
               name="username"
@@ -125,7 +109,7 @@ class Login extends React.Component {
           </Row>
           <Row>
             <label htmlFor="password">Password: </label>
-            <input
+            <Input
               type="text"
               id="password"
               name="password"

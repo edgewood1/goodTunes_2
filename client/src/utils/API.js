@@ -12,6 +12,7 @@ export default {
   },
 
   register: function(data) {
+    console.log(data)
     return axios.post("/register", data);
   },
   login: function(data) {

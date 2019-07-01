@@ -1,45 +1,7 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-// import { Nav } from "semantic-ui-react";
+import {Wrapper, HeaderWrapper, Header, Body, Button} from '../assets_css/nav_css'
 
-import styled from "styled-components";
-
-// props: logOut, changeScrape,
-
-const Wrapper = styled.div`
-display: flex
-justify-content: center;
-
-
-`;
-const HeaderWrapper = styled.div`
-  margin: 3% 5% 0 5%;
-  border-radius: 2.5%;
-  border: 2px ridge #f5d21f;
-  width: 85%;
-  background-color: #29648a;
-  color: white;
-  font-family: "Lato", sans-serif;
-`;
-const Header = styled.div`
-  padding: 3%;
-
-  border-radius: 4%;
-`;
-const Body = styled.div`
-  display: flex;
-  justify-content: space-between;
-  // flex-wrap: wrap;
-
-  margin: 0 5% 2% 5%;
-`;
-
-const Button = styled.div`
-  padding: 1%;
-  border-radius: 10%;
-  background-color: #2e9cca;
-  text-align: center;
-`;
 
 export default class Nav extends Component {
   scrape = () => {

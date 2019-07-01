@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Container from "./components/container.js";
-import Nav from "./components/nav.js";
+import Container from "./sections/container.js";
+import Nav from "./sections/nav.js";
 import API from "./utils/API";
 import Footer from "./components/footer";
 

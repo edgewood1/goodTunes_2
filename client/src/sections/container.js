@@ -1,8 +1,7 @@
 import React from "react";
-import { Wrapper, Col1, Col2 } from "./container_css";
+import { Wrapper, Col1, Col2 } from "../assets_css/container_css";
 import PlayList from "./playList";
 import Login from "./login";
-import API from "../utils/API";
 import Player from "./player";
 
 class Container extends React.Component {
