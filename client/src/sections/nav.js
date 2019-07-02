@@ -14,8 +14,11 @@ export default class Nav extends Component {
   };
 
   addScrapeToDb = data => {
+  
     // var count1 = this.props.appData.allTunes.length;
+    // send newly scraped tunes to database
     API.addScrape(data).then(res => {
+      console.log("sent back - ", res)
       var count2 = res.data.tunes.length;
       // (count1 + " -- " + count2);
       API.getPlaylist().then(res => {
@@ -31,6 +34,7 @@ export default class Nav extends Component {
 
   getPlaylist = () => {
     var count1 = this.props.appData.allTunes.length;
+    console.log()
     API.getPlaylist()
       .then(res => {
         var count2 = res.data.length;

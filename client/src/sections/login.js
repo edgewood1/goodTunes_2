@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 
 import API from "../utils/API";
-import {Container, Row, Input} from '../assets_css/login_css'
+import {Container, Row, Input, LogButton} from '../assets_css/login_css'
 
 
 class Login extends React.Component {
@@ -118,28 +118,18 @@ class Login extends React.Component {
             />
           </Row>
           <Row>
-            <button
+            <LogButton
               value="Login"
-              onClick={this.handleLogin}
-              style={{
-                color: "black",
-                marginRight: "5%",
-                background: "#f5d21f"
-              }}
+              onClick={this.handleLogin}         
             >
               Login
-            </button>
-            <button
+            </LogButton>
+            <LogButton
               value="Register"
               onClick={this.handleLogin}
-              style={{
-                color: "black",
-                marginLeft: "5%",
-                background: "#f5d21f"
-              }}
             >
               Register
-            </button>
+            </LogButton>
           </Row>
 
           <Row>

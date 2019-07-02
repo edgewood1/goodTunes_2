@@ -14,5 +14,11 @@ export const Row = styled.div`
 `;
 
 export const Input = styled.input`
-color: black;
+  color: black;
+`
+
+export const LogButton = styled.button`
+  color: black;
+  margin-left: 5%;
+  background-color:#f5d21f;
 `
